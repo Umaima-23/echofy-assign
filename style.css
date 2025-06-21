@@ -1,15 +1,21 @@
 @font-face {
-    font-family: satoshi;
-    src: url(./Fonts/OTF/Satoshi-Medium.otf);
+    font-family: "albert";
+    src: url(./Fonts/AlbertSans-Bold.ttf);
+}
+@font-face {
+    font-family: "albert-light";
+    src: url(./Fonts/AlbertSans-Light.ttf);
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: satoshi;
+    font-family: "albert";
 }
 body{
     overflow-x: hidden;
+    background-image: url(./images/banner-bg.jpg);
+    background-repeat: no-repeat;
 }
 #head-1{
     width:100vw;
@@ -49,6 +55,7 @@ body{
      display: flex;
      flex-wrap: wrap;
      gap: 5vw;
+     background-color: black;
  }
  .head-cont2 i{
      padding-left: 1vw;
@@ -71,6 +78,8 @@ body{
      margin-top: 5px;
      position: sticky;
      top: 0;
+     z-index: 9999;
+     transition: all 0.3s ease;
 }
 .head-2-cont{
     margin: 0 auto;
@@ -84,8 +93,9 @@ body{
 }
 #logo{
     flex-grow:1 ;
+
     /* background-color: rebeccapurple; */
-    justify-content: center;
+   
 }
 .head-2list{
     flex-grow: 3;
@@ -95,8 +105,10 @@ body{
     
 }
 .head-2list ul{
-    width: 100%;
+    width: 90%;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     list-style: none;
     justify-content: space-between;
     align-items: center;
@@ -115,26 +127,27 @@ body{
     color: #7AA93C;
 }
 .hero{
-    background-image: url(./images/hero-bg2.jpg);
     width: 100vw;
-    height: 120vh;
+    height: auto;
+    min-height: 100vh;
     /* position: relative; */
 }
 .hero-left{
     width: 50%;
+    max-width: 90%;
     height: 50vh;
     /* display: flex; */
     position: relative;
-    top: 200px;
-    left: 100px;
+    top: 30vh;
+    left: 5vw;
     /* background-color: rgb(26, 29, 29); */
     line-height: 20px;
     color: white;
 }
 
 .hero-left h1{
-    font-size: 76px;
-    line-height: 75px;
+    font-size: clamp(32px, 8vw, 76px);
+    line-height: 1.1em;
 }
 .hero-left .hero-para{
     width: 80%;
@@ -151,27 +164,804 @@ body{
     margin-bottom: 20px;
 }
 .hero-btns{
+    /* background-color: aqua; */
+    width: 90vw;
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    justify-content: flex-start;
 
 }
 .hero-btn1,.hero-btn2{
     background-color: #49AF45;
-    width: 20%;
+    width: clamp(120px,20vw,150px);
     padding: 15px;
     color: white;
     font-size: 1rem;
     font-weight: 100;
-   letter-spacing: 2px;
    border-radius: 10px;
+   
 }
+
 .hero-btn2{
-    margin-left: 30px;
     border: 2px solid gray;
     background-color: transparent;
 }
-marquee{
+.marquee{
     width: 100vw;
     height: 15vh;
     background-color: #49AF45;
-    justify-content: start;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 1;
+}
+.marquee h6{
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 30px;
+   
+}
+/* _____________________________________about______________________________________________________ */
+.about{
+    background-image: url(./images/about-bg.jpg);
+    height: auto;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    padding: 5vw ;
+    display: flex;
+    flex-wrap: wrap;
+}
+.car-about{
+    background-image: url(./images/about-thumb-car.png);
+    width: 50%;
+    min-width: 300px;
+    height: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    vertical-align: middle;
+    /* background-color: rgb(199, 121, 25); */
+    margin-right: 50px;
+    position: relative;
+   
+}
+
+.right-about{
+    width: 45%;
+    min-width: 250px;
+    height: 100%;
+    /* background-color: aqua; */
+    padding:50px 0;
+}
+.right-about img{
+    vertical-align: middle;
+}
+.right-text-about{
+    text-transform: uppercase;
+    color: #49AF45;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 12px;
+    margin-bottom: 20px;
+}
+.right-about h1{
+    line-height: 3rem ;
+    font-size:3rem;
+    color: #001819;
+}
+.about-box-content{
+    margin: 30px 0;
+}
+.about-box-content img{
+    display: inline-block;
+}
+.about-box-content h4{
+    display: inline-block;
+   margin-left: 20px;
+   font-size: 1.5rem;
+   font-weight: 200;
+}
+.about-box-content p{
+    margin-top: 10px;
+    color: #868681;
+    font-weight: 300;
+    line-height: 26px;
+    padding-left: 60px;
+    font-size: 1.2rem;
+    padding-bottom: 30px;
+}
+.about-box-content button{
+    margin-top: 30px;
+    background-color: #49AF45;
+    width: clamp(120px,20vw,200px);
+    padding: 20px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 100;
+   border-radius: 30px;
+   border: none;
+}
+.award-about{
+    position: absolute;
+    bottom: 8px;
+}
+/* ______________________________service area__________________________ */
+.service-area{
+        background-image: url(./images/service-bg.jpg);
+        /* height: 120vh; */
+        width: 100vw;
+        background-size: cover;
+        /* background-position: center; */
+        padding: 5vw ;
+        display: flex;
+        flex-wrap: wrap;
+}
+.service{
+    width: 90%;
+    margin: 0 auto;
+    /* background-color: aqua; */
+    
+}
+.service-2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 20px;
+    /* background-color: palegreen; */
+}
+.service-2-pt1{
+    flex: 1 1 60%;
+    min-width: 250px;
+    max-width: 100%;
+    /* background-color: hotpink; */
+}
+.service-2-pt1 h1{
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.2em;
+}
+.our-service-text{
+    text-transform: uppercase;
+    color: #49AF45;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 12px;
+    margin-bottom: 20px;
+  
+}
+.our-service-text img{
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.service-2-pt2{
+    flex: 1 1 5%;
+    min-width: 150px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    /* width: clamp(100px, 15%, 200px); */
+    /* flex-shrink: 0; */
+    /* background-color:#2b5dc2; */
+}
+.arrow{
+    vertical-align: middle;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7AA93C;
+    /* padding: 1.2vw; */
+    color: white;
+}
+
+/* cardsss___________________________ */
+.card-service-main{
+    margin: 0 auto;
+    width: 85vw;
+    height: auto;
+    /* background-color: pink; */
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.cards-service{
+    flex: 1 1 300px;
+    width: 32%;
+    min-width: 280px;
+    background-color: #FDF8F2;
+    padding:1.5rem;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.cards-service img{
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: contain;
+}
+.justify-cont-service{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 10px;
+    /* background-color:coral; */
+}
+.justify-cont-service img{
+    width: 60px;
+}
+.justify-cont-service i{
+    color: #7AA93C;
+}
+.arrow-justify{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 1rem;
+}
+.inner-tree-btn button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    display: block;
+}
+.inner-tree-btn .dash{
+    background-color: #7AA93C;
+    height: 2px;
+    width: 10%;
+    margin-top: 20px;
+}
+.card-service-para p{
+    margin-top: 30px;
+    color: #868681;
+    font-family: "albert-light";
+    font-weight: 200;
+}
+/* ______________________________greenfuture skillls parts_____________________________________ */
+.green-future{
+        background-color:#F6F6EE ;
+        /* background-color: tomato; */
+        height: auto;
+        width: 100vw;
+        padding: 10vw 0 ;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+.green-future-inner{
+    /* background-color: rgba(193, 172, 207, 0.24); */
+    width: 90%;
+    margin: 0 auto;  
+    padding: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.our-skills-text{
+    text-transform: uppercase;
+    color: #49AF45;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 12px;
+    margin-bottom: 20px; 
+}
+.our-skills-text img{
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.left-skill{
+    width: 55%;
+    min-width: 280px;
+    padding: 2vw;
+    /* background-color: rgba(38, 193, 204, 0.329); */
+    
+}
+.left-skill h1{
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.3em;
+}
+.left-skill p{
+    margin-top: 20px;
+    font-family: "albert-light";
+    color: gray;
+    line-height: 1.6em;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+.btn-skill{
+    width: clamp(200px, 40%, 300px);
+    padding: 1.5rem 1rem 1.5rem 3.5rem;
+    background-color: white ;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    border: none;
+    position: relative;
+    display: inline-block;
+}
+.circle-skill-btn{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: #7AA93C;
+   position: absolute;
+   top: 50%;
+   left: 1rem;
+   transform: translateY(-50%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-size: 1rem;
+}
+
+.line-rec{
+    margin-top: 30px;
+    width: 90%;
+    height: auto;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+}
+.black-line-rec{
+    margin-top: 20px;
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    position: relative;
+}
+.green-line-rec{
+   position: absolute;
+   top: 0;
+   left: 0;
+    width: 90%;
+    height: 100%;
+    background-color: #7AA93C;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    border-radius: 10px;
+}
+.line-ocean{
+    margin-top: 0px;
+    width: 80%;
+    height: auto;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+}
+.green-line-ocean{
+    position: absolute;
+   top: 0;
+   left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #7AA93C;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    border-radius: 10px;
+}
+.line-rec .rec,.line-ocean .rec{
+    color: black;
+    font-weight: 700;
+}
+.right-img-skill{
+    /* background-color: yellow; */
+    flex: 1 1 40%;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.right-img-skill img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+@keyframes Toptobtm {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.small-img-skill{
+    width: 50%;
+    height: 100px;
+    position:absolute;
+    top: -20px;
+    left: -20px;
+    animation: Toptobtm 1s ease-out alternate;
+    animation-iteration-count: infinite;
+}
+
+/* ______________________counter-green______________________ */
+.counter-green{
+    background-image: url(./images/counter-bg.png);
+    width: 100vw;
+    height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.count-gr-content{
+    /* background-color: pink; */
+    flex: 1 1 20%;
+    height: auto;
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.count-gr-content img{
+    margin-bottom: 30px;
+}
+.count-gr-content h1{
+    font-size: 3rem;
+}
+.count-gr-content p{
+    font-family: "albert-light";
+    font-size: 1.3rem;
+}
+.finished-area{
+        background-image: url(./images/project-bg.jpg);
+        height:auto;
+        /* background-color: violet; */
+        width: 100vw;
+        background-size: cover;
+        /* background-position: center; */
+        padding: 5vw ;
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: start; */
+        align-items: start;
+}
+.finish-2-pt1{
+    flex: 3 1 40%;
+    min-width: 250px;
+    max-width: 100%;
+    background-color: hotpink;
+}
+.finish-2-pt1 h1{
+    font-size: 3rem;
+}
+.proj-main{
+    background-color: aquamarine;
+    width: 95%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 30px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.proj-images{
+    /* background-color: cadetblue; */
+    flex: 1 1 200px;   
+    height:auto;
+    position: relative;
+    z-index: 1;
+}
+.proj-absolute-skin{
+    width: 90%;
+    height: 16vh;
+    background-color: #F6F6EE;
+    position: absolute;
+    bottom: -40px;
+    border-radius: 20px;
+    padding: 2rem;
+    z-index: 2;
+}
+.proj-absolute-skin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #7AA93C; 
+    transition: width 0.4s ease;
+    z-index: 0;
+    border-radius: 20px;
+   
+}
+.proj-absolute-skin:hover::before {
+    width: 100%;
+}
+.proj-absolute-skin:hover{
+    color: white;
+} 
+
+.proj-absolute-skin p{
+    color: gray;
+    font-family: "albert-light";
+}
+.proj-absolute-skin:hover p{
+    color: white;
+}
+.proj-absolute-skin * {
+    position: relative;
+    z-index: 1;
+}
+.working-process{
+    background-color: white;
+    height: auto;
+    /* background-color: violet; */
+    width: 100%;
+    padding: 5vw ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.work-text{
+    width: 100%;
+   text-align: center;
+   background-color: pink;
+   margin-top: 8vw;
+}
+.our-work-text{
+    text-transform: uppercase;
+    color: #49AF45;
+    font-family: "albert-light";
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 12px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    gap: 10px;
+}
+.work-2{
+    width: 100%;
+    text-align: center;
+    /* background-color: orange; */
+}
+.work-2 h1{
+    font-size: clamp(1.2rem, 3vw, 4rem);
+}
+
+
+.working-process-ag{
+    width: 100%;
+    height: 60vh;
+    background-color: aquamarine;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
+.img-and-cont{
+    flex: 1 1 30%;
+   height: 100%;
+   /* background-color: blueviolet; */
+   padding: 20px;
+  text-align: center;
+ 
+ 
+
+}
+.image-ag,.text-work-proces-ag{
+    width: 80%;
+    height: 50%;
+    /* background-color: pink; */
+   margin: 0 auto; 
+   margin-bottom: 10px;
+}
+.text-work-proces-ag h4{
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+.text-work-proces-ag p{
+    color: grey;
+    font-family: "albert-light";
+    font-weight: 300;
+}
+.image-ag{
+    position: relative;
+}
+.arrow-ag{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+}
+/* testimonals______________________________________ */
+.testimonal{
+       background-color: #F6F6EE;
+       background-image: url(./images/map-aftr-work.png);
+       background-size: cover;
+       background-repeat: no-repeat;
+       width: 100vw;
+       height: 100vh;
+     
+}
+.testi-text{
+    width: 100%;
+   text-align: center;
+   /* background-color: pink; */
+   margin-top: 8vw;
+}
+.our-testi-text{
+    text-transform: uppercase;
+    color: #49AF45;
+    font-family: "albert-light";
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0 12px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    gap: 10px;
+}
+.testi-divs{
+    width: 100%;
+    height: 50vh;
+    /* background-color: purple; */
+    margin-top: 30px;
+    display: flex;
+    
+    speak-as: 10px;
+    
+}
+
+/* ________________________client_____________________________ */
+.div-client{
+    background-color: white;
+    width:43% ;
+    height: 100%;
+    border-radius: 10px;
+    padding: 3rem;
+    display: flex;
+    gap: 10px;
+    margin: 0 30px 0 30px;
+}
+.green-star{
+    color: #7AA93C;
+}
+.star-andcont{
+   padding: 30px 0 0 30px;
+   /* background-color: yellow; */
+}
+.star-andcont p{
+    margin-top: 10px;
+    font-family: "albert-light";
+    font-weight: 500;
+    color: grey;
+    line-height: 1.5rem;  
+}
+.star-andcont h2{
+    margin-top: 30px;
+}
+.last-pt-client{
+    display: flex;
+    /* background-color: pink; */
+    justify-content: space-between;
+}
+.logo-client{
+    align-self: center;
+}
+
+/* ______________________________brand-logo_____________________ */
+.brand-logo{
+    background-image: url(./images/brand-bg.jpg);
+    width: 90vw;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 2rem;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.brand-logo h4{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+.images-brand-logo{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.team-member{
+        /* background-color: #F6F6EE; */
+        background-image: url(./images/team-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+      
+}
+.inner-team-div{
+   width: 90%;
+   height: 70%;
+   /* background-color: pink; */
+   margin: 0 auto;
+   margin-top: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 30px;
+   align-items: end;
+   justify-content: space-between;
+   
+   
+}
+.skin-member-div{
+    width: 30%;
+    height: 80%;
+    background-color: #F6F6EE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.skin-member-div p{
+    color: #7AA93C;
+}
+.skin-member-div i{
+      color: grey;
+      padding-right: 30px;
+      margin-top: 30px;
+}
+.skin-member-div img{
+    position: relative;
+    bottom: 80px;
+}
+.blog-green{
+    background-image: url(./images/project-bg.jpg);
+    height:auto;
+    background-color: violet;
+    width: 100vw;
+    background-size: cover;
+    /* background-position: center; */
+    /* padding: 5vw ; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: start; */
+}
+.blog-green button{
+    background-color: #7AA93C;
+    border: none;
+    height: 50px;
+    width: 15%;
+    color: white;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: "albert-light";
 }
