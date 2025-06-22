@@ -12,6 +12,9 @@
     box-sizing: border-box;
     font-family: "albert";
 }
+body{
+    overflow-x: hidden;
+}
 .background-img-main{
     /* overflow-x: hidden; */
     background-image: url(./images/banner-bg.jpg);
