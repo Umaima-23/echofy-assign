@@ -16,10 +16,12 @@
     /* overflow-x: hidden; */
     background-image: url(./images/banner-bg.jpg);
     background-repeat: no-repeat;
-       
+    background-position-x: center;
     width: 100%;
     min-height: 100vh;               
-    position: relative;    
+    position: relative;   
+    display: flex;
+    flex-wrap: wrap; 
 }
 #head-1{
     width:100vw;
@@ -45,8 +47,8 @@
     /* background-color: bisque; */
     display: flex;
     flex-wrap: wrap;
-  gap: 2vw;
-  min-width: 250px;
+    gap: 2vw;
+    min-width: 250px;
 }
 .head-cont1 i{
     color: #7AA93C;
@@ -70,7 +72,8 @@
  /* ________________________________HEad_2________________________________ */
 .head-2{
      width: 100vw;
-     height: 10vh;
+     height: auto;
+     min-height: 10vh;
      /* background-color: aqua; */
      background-color: black;
      display: flex;
@@ -135,6 +138,9 @@
     height: auto;
     min-height: 100vh;
     /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 .hero-left{
     width: 50%;
@@ -147,6 +153,7 @@
     /* background-color: rgb(26, 29, 29); */
     line-height: 20px;
     color: white;
+   
 }
 
 .hero-left h1{
@@ -179,19 +186,42 @@
 
 }
 .hero-btn1,.hero-btn2{
-    background-color: #49AF45;
-    width: clamp(120px,20vw,150px);
-    padding: 15px;
+    background-color: #7AA93C;
+    width: clamp(150px,30vw,200px);
+    height: 60px;
     color: white;
-    font-size: 1rem;
-    font-weight: 100;
-   border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "albert-light";
+   border-radius: 30px;
    
 }
 
 .hero-btn2{
-    border: 2px solid gray;
+    /* border: 2px solid yellow; */
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    
+}
+.hero-btn1 img{
+    padding-left: 10px;
+}
+.hero-btn2 p{
+   padding-left: 10px;
+   align-self: center;
+}
+.circle-btn-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(53, 82, 80);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
+    color: #7cc422;
 }
 .marquee{
     width: 100vw;
@@ -777,7 +807,7 @@
 }
 .img-and-cont{
     flex: 1 1 30%;
-   height: 100%;
+   height: auto;
    /* background-color: blueviolet; */
    padding: 20px;
   text-align: center;
@@ -803,6 +833,7 @@
 }
 .image-ag{
     position: relative;
+    height: auto;
 }
 .arrow-ag{
     position: absolute;
@@ -843,6 +874,8 @@
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* ________________________client_____________________________ */
@@ -858,6 +891,7 @@
     /* display: inline-block; */
     gap: 10px;
     margin: 0 30px 0 30px;
+    justify-content: center;
 }
 .green-star{
     color: #7AA93C;
@@ -932,7 +966,7 @@
 }
 .inner-team-div{
    width: 90%;
-   height: 70%;
+   height: auto;
    /* background-color: pink; */
    margin: 0 auto;
    margin-top: 30px;
@@ -1081,6 +1115,7 @@
     font-size: 14px;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
   }
 
   .foot-cont{
@@ -1114,7 +1149,7 @@
   }
   .img-foot h1{
     color: white;
-    font-size: 3rem;
+    font-size: clamp(3rem,20px,1.5rem);
     font-weight: bold;
     width: 70%;
     /* background-color: wheat; */
